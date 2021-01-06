@@ -1,0 +1,14 @@
+---
+# ## save cisco mds config backup within the Project's directory ## #
+
+- hosts: ciscomds
+  connection: ansible.netcommon.network_cli
+
+  gather_facts: false
+  tasks:
+    - name: configurable backup path
+      cisco.nxos.nxos_config:
+        backup: yes
+        backup_options:
+          filename: backup_{{inventory_hostname}}_{{ lookup('pipe','date +%m-%d-%Y') }}.cfg
+          dir_path: "backups/"
