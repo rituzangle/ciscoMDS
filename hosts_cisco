@@ -1,0 +1,8 @@
+[ciscomds]
+cisco-mds1.knockknock.co
+cisco-mds2.knockknock.co
+
+[all:vars]
+ansible_network_os=cisco.nxos.nxos
+ansible_python_interpreter='/usr/bin/python'
+
